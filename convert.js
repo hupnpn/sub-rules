@@ -101,7 +101,7 @@ function stripNodeSuffix(groupNames) {
 }
 
 const PROXY_GROUPS = {
-    SELECT: "节点选择",
+    SELECT: "选择代理",
     MANUAL: "手动选择",
     FALLBACK: "故障转移",
     DIRECT: "直连",
@@ -261,13 +261,13 @@ const ruleProviders = {
 const baseRules = [
     `RULE-SET,ADBlock,广告拦截`,
     `RULE-SET,AdditionalFilter,广告拦截`,
-    `RULE-SET,SogouInput,DIRECT`,
-    `DOMAIN-SUFFIX,truthsocial.com,SELECT`,
-    `RULE-SET,StaticResources,SELECT`,
-    `RULE-SET,CDNResources,SELECT`,
-    `RULE-SET,AdditionalCDNResources,SELECT`,
-    `RULE-SET,Crypto,SELECT`,
-    `RULE-SET,EHentai,SELECT`,
+    `RULE-SET,SogouInput,搜狗输入法`,
+    `DOMAIN-SUFFIX,truthsocial.com,真相社交`,
+    `RULE-SET,StaticResources,静态资源`,
+    `RULE-SET,CDNResources,静态资源`,
+    `RULE-SET,AdditionalCDNResources,静态资源`,
+    `RULE-SET,Crypto,加密货币`,
+    `RULE-SET,EHentai,E-Hentai`,
     `RULE-SET,TikTok,TikTok`,
     "GEOSITE,YOUTUBE,YouTube",
     "GEOSITE,TELEGRAM,Telegram",
@@ -283,7 +283,7 @@ const baseRules = [
     "GEOSITE,SPOTIFY,Spotify",
     "GEOSITE,BAHAMUT,巴哈姆特",
     "GEOSITE,BILIBILI,哔哩哔哩",
-    `GEOSITE,PIKPAK,SELECT`,
+    "GEOSITE,PIKPAK,PikPak网盘",
     `GEOSITE,GFW,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOSITE,PRIVATE,${PROXY_GROUPS.DIRECT}`,
@@ -291,7 +291,7 @@ const baseRules = [
     "GEOIP,TELEGRAM,Telegram,no-resolve",
     `GEOIP,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOIP,PRIVATE,${PROXY_GROUPS.DIRECT}`,
-    `DST-PORT,22,SELECT`,
+    "DST-PORT,22,SSH(22端口)",
     `MATCH,${PROXY_GROUPS.SELECT}`,
 ];
 
@@ -383,10 +383,19 @@ const countriesMeta = {
         pattern: "香港|港|HK|hk|Hong Kong|HongKong|hongkong|🇭🇰",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png",
     },
+    澳门: {
+        pattern: "澳门|MO|Macau|🇲🇴",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Macao.png",
+    },
     台湾: {
         weight: 20,
         pattern: "台|新北|彰化|TW|Taiwan|🇹🇼",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png",
+    },
+    新加坡: {
+        weight: 30,
+        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
     },
     日本: {
         weight: 40,
@@ -397,15 +406,49 @@ const countriesMeta = {
         pattern: "KR|Korea|KOR|首尔|韩|韓|🇰🇷",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png",
     },
-    狮城: {
-        weight: 30,
-        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
-    },
     美国: {
         weight: 50,
         pattern: "美国|美|US|United States|🇺🇸",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png",
+    },
+    加拿大: {
+        pattern: "加拿大|Canada|CA|🇨🇦",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Canada.png",
+    },
+    英国: {
+        weight: 60,
+        pattern: "英国|United Kingdom|UK|伦敦|London|🇬🇧",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_Kingdom.png",
+    },
+    澳大利亚: {
+        pattern: "澳洲|澳大利亚|AU|Australia|🇦🇺",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Australia.png",
+    },
+    德国: {
+        weight: 70,
+        pattern: "德国|德|DE|Germany|🇩🇪",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png",
+    },
+    法国: {
+        weight: 80,
+        pattern: "法国|法|FR|France|🇫🇷",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/France.png",
+    },
+    俄罗斯: {
+        pattern: "俄罗斯|俄|RU|Russia|🇷🇺",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Russia.png",
+    },
+    泰国: {
+        pattern: "泰国|泰|TH|Thailand|🇹🇭",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Thailand.png",
+    },
+    印度: {
+        pattern: "印度|IN|India|🇮🇳",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/India.png",
+    },
+    马来西亚: {
+        pattern: "马来西亚|马来|MY|Malaysia|🇲🇾",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Malaysia.png",
     },
 };
 
@@ -576,7 +619,7 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
             type: "select",
-            proxies:defaultFallback,
+            proxies: defaultSelector,
         },
         {
             name: PROXY_GROUPS.MANUAL,
