@@ -642,166 +642,68 @@ function buildProxyGroups({
             name: "YouTube",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "Netflix",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "AI服务",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "Telegram",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "哔哩哔哩",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "DIRECT" ])
+},
         {
             name: "巴哈姆特",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "DIRECT" ])
+},
         {
             name: "TikTok",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "Spotify",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "Apple",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "Google",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: "微软服务",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
             type: "select",
-            proxies:addGlobal([
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ])
-        },
+            proxies: addGlobal([ "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", "手动选择", "故障转移", "DIRECT" ])
+},
         {
             name: PROXY_GROUPS.DIRECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png",
