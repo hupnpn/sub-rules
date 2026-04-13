@@ -523,7 +523,7 @@ function buildCountryProxyGroups({ countries, landing, loadBalance, regexFilter,
     const groups = [];
     const baseExcludeFilter = "0\\.[0-5]|低倍率|省流|大流量|实验性";
     const landingExcludeFilter = LANDING_PATTERN;
-    const groupType = loadBalance ? "load-balance" : "url-test";
+    const groupType = loadBalance ? "load-balance" : "select";
 
     /**
      * 枚举模式（`regexFilter=false`）下预先建立"地区 → 节点名列表"的索引，
@@ -801,7 +801,7 @@ function buildProxyGroups({
             ? {
                   name: PROXY_GROUPS.LOW_COST,
                   icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Lab.png",
-                  type: "url-test",
+                  type: "select",
                   url: "https://cp.cloudflare.com/generate_204",
                   ...(!regexFilter
                       ? { proxies: lowCostNodes }
