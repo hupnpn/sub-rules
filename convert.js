@@ -261,13 +261,13 @@ const ruleProviders = {
 const baseRules = [
     `RULE-SET,ADBlock,广告拦截`,
     `RULE-SET,AdditionalFilter,广告拦截`,
-    `RULE-SET,SogouInput,搜狗输入法`,
-    `DOMAIN-SUFFIX,truthsocial.com,真相社交`,
-    `RULE-SET,StaticResources,静态资源`,
-    `RULE-SET,CDNResources,静态资源`,
-    `RULE-SET,AdditionalCDNResources,静态资源`,
-    `RULE-SET,Crypto,加密货币`,
-    `RULE-SET,EHentai,E-Hentai`,
+    `RULE-SET,SogouInput,DIRECT`,
+    `DOMAIN-SUFFIX,truthsocial.com,美国节点`,
+    `RULE-SET,StaticResources,SELECT`,
+    `RULE-SET,CDNResources,SELECT`,
+    `RULE-SET,AdditionalCDNResources,SELECT`,
+    `RULE-SET,Crypto,SELECT`,
+    `RULE-SET,EHentai,SELECT`,
     `RULE-SET,TikTok,TikTok`,
     "GEOSITE,YOUTUBE,YouTube",
     "GEOSITE,TELEGRAM,Telegram",
@@ -283,7 +283,7 @@ const baseRules = [
     "GEOSITE,SPOTIFY,Spotify",
     "GEOSITE,BAHAMUT,巴哈姆特",
     "GEOSITE,BILIBILI,哔哩哔哩",
-    "GEOSITE,PIKPAK,PikPak网盘",
+    `GEOSITE,PIKPAK,SELECT`,
     `GEOSITE,GFW,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOSITE,PRIVATE,${PROXY_GROUPS.DIRECT}`,
@@ -291,7 +291,7 @@ const baseRules = [
     "GEOIP,TELEGRAM,Telegram,no-resolve",
     `GEOIP,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOIP,PRIVATE,${PROXY_GROUPS.DIRECT}`,
-    "DST-PORT,22,SSH(22端口)",
+    `DST-PORT,22,SELECT`,
     `MATCH,${PROXY_GROUPS.SELECT}`,
 ];
 
@@ -383,19 +383,10 @@ const countriesMeta = {
         pattern: "香港|港|HK|hk|Hong Kong|HongKong|hongkong|🇭🇰",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png",
     },
-    澳门: {
-        pattern: "澳门|MO|Macau|🇲🇴",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Macao.png",
-    },
     台湾: {
         weight: 20,
         pattern: "台|新北|彰化|TW|Taiwan|🇹🇼",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png",
-    },
-    新加坡: {
-        weight: 30,
-        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
     },
     日本: {
         weight: 40,
@@ -406,49 +397,15 @@ const countriesMeta = {
         pattern: "KR|Korea|KOR|首尔|韩|韓|🇰🇷",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png",
     },
+    新加坡: {
+        weight: 30,
+        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
+    },
     美国: {
         weight: 50,
         pattern: "美国|美|US|United States|🇺🇸",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png",
-    },
-    加拿大: {
-        pattern: "加拿大|Canada|CA|🇨🇦",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Canada.png",
-    },
-    英国: {
-        weight: 60,
-        pattern: "英国|United Kingdom|UK|伦敦|London|🇬🇧",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_Kingdom.png",
-    },
-    澳大利亚: {
-        pattern: "澳洲|澳大利亚|AU|Australia|🇦🇺",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Australia.png",
-    },
-    德国: {
-        weight: 70,
-        pattern: "德国|德|DE|Germany|🇩🇪",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png",
-    },
-    法国: {
-        weight: 80,
-        pattern: "法国|法|FR|France|🇫🇷",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/France.png",
-    },
-    俄罗斯: {
-        pattern: "俄罗斯|俄|RU|Russia|🇷🇺",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Russia.png",
-    },
-    泰国: {
-        pattern: "泰国|泰|TH|Thailand|🇹🇭",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Thailand.png",
-    },
-    印度: {
-        pattern: "印度|IN|India|🇮🇳",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/India.png",
-    },
-    马来西亚: {
-        pattern: "马来西亚|马来|MY|Malaysia|🇲🇾",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Malaysia.png",
     },
 };
 
@@ -619,7 +576,15 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
             type: "select",
-            proxies: defaultSelector,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
             name: PROXY_GROUPS.MANUAL,
@@ -670,121 +635,152 @@ function buildProxyGroups({
             tolerance: 20,
             lazy: false,
         },
-        {
-            name: "静态资源",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cloudflare.png",
-            type: "select",
-            proxies: defaultProxies,
-        },
-        {
-            name: "AI服务",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
-            type: "select",
-            proxies: defaultProxies,
-        },
-        {
-            name: "加密货币",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cryptocurrency_3.png",
-            type: "select",
-            proxies: defaultProxies,
-        },
-        {
-            name: "Apple",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
-            type: "select",
-            proxies: defaultProxies,
-        },
-        {
-            name: "Google",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
-            type: "select",
-            proxies: defaultProxies,
-        },
-        {
-            name: "微软服务",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
-            type: "select",
-            proxies: defaultProxies,
-        },
-        {
             name: "YouTube",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png",
             type: "select",
-            proxies: defaultProxies,
-        },
-        {
-            name: "哔哩哔哩",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
-            type: "select",
-            proxies:
-                hasTW && hasHK
-                    ? [PROXY_GROUPS.DIRECT, "台湾节点", "香港节点"]
-                    : defaultProxiesDirect,
-        },
-        {
-            name: "巴哈姆特",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png",
-            type: "select",
-            proxies: hasTW
-                ? ["台湾节点", PROXY_GROUPS.SELECT, PROXY_GROUPS.MANUAL, PROXY_GROUPS.DIRECT]
-                : defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
             name: "Netflix",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
-            name: "TikTok",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png",
+            name: "哔哩哔哩",
+            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "DIRECT"
+            ],
+        },
+        {
+            name: "巴哈姆特",
+            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png",
+            type: "select",
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "DIRECT"
+            ],
         },
         {
             name: "Spotify",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
-            name: "E-Hentai",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Ehentai.png",
+            name: "TikTok",
+            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
             name: "Telegram",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
-            name: "真相社交",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/TruthSocial.png",
+            name: "AI服务",
+            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             type: "select",
-            proxies: hasUS
-                ? ["美国节点", PROXY_GROUPS.SELECT, PROXY_GROUPS.MANUAL]
-                : defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
-            name: "PikPak网盘",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/PikPak.png",
+            name: "Apple",
+            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
-            name: "SSH(22端口)",
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png",
+            name: "Google",
+            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
         {
-            name: "搜狗输入法",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Sougou.png",
+            name: "微软服务",
+            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
             type: "select",
-            proxies: [PROXY_GROUPS.DIRECT, "REJECT"],
+            proxies:[
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "韩国节点",
+                "新加坡节点",
+                "美国节点",
+                "DIRECT"
+            ],
         },
+        {
         {
             name: PROXY_GROUPS.DIRECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png",
