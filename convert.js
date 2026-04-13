@@ -584,7 +584,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: PROXY_GROUPS.MANUAL,
@@ -646,7 +646,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "Netflix",
@@ -660,7 +660,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "哔哩哔哩",
@@ -670,7 +670,7 @@ function buildProxyGroups({
                 "香港节点",
                 "台湾节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "巴哈姆特",
@@ -680,7 +680,7 @@ function buildProxyGroups({
                 "香港节点",
                 "台湾节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "Spotify",
@@ -694,7 +694,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "TikTok",
@@ -708,7 +708,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "Telegram",
@@ -722,7 +722,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "AI服务",
@@ -736,7 +736,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "Apple",
@@ -750,7 +750,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "Google",
@@ -764,7 +764,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
             name: "微软服务",
@@ -778,7 +778,7 @@ function buildProxyGroups({
                 "新加坡节点",
                 "美国节点",
                 "DIRECT"
-            ],
+            ]
         },
         {
         {
