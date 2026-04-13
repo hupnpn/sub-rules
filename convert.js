@@ -574,8 +574,7 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -632,8 +631,7 @@ function buildProxyGroups({
             name: "YouTube",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -641,8 +639,7 @@ function buildProxyGroups({
             name: "Netflix",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -650,8 +647,7 @@ function buildProxyGroups({
             name: "Telegram",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             type: "select",
-            proxies:
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -659,8 +655,7 @@ function buildProxyGroups({
             name: "AI服务",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies: hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -668,8 +663,7 @@ function buildProxyGroups({
             name: "哔哩哔哩",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
             type: "select",
-            proxies:
-                hasHK && hasTW
+            proxies:hasHK && hasTW
                     ? ["香港节点", "台湾节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -685,8 +679,7 @@ function buildProxyGroups({
             name: "TikTok",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -694,8 +687,7 @@ function buildProxyGroups({
             name: "Spotify",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png",
             type: "select",
-            proxies:
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -703,8 +695,7 @@ function buildProxyGroups({
             name: "Apple",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -712,8 +703,7 @@ function buildProxyGroups({
             name: "Google",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
@@ -721,8 +711,7 @@ function buildProxyGroups({
             name: "微软服务",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
             type: "select",
-            proxies: 
-                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+            proxies:hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
                     ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
