@@ -576,7 +576,7 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png",
             type: "select",
-            proxies:addGlobal([
+            proxies:[
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -586,7 +586,7 @@ function buildProxyGroups({
                     "手动选择", 
                     "故障转移",
                     "DIRECT"
-                    ])
+                    ]
         },
         {
             name: PROXY_GROUPS.MANUAL,
