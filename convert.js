@@ -574,7 +574,7 @@ function buildProxyGroups({
     return [
         {
             name: PROXY_GROUPS.SELECT,
-            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
+            icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png",
             type: "select",
             proxies:[
                     "香港节点", 
@@ -636,6 +636,7 @@ function buildProxyGroups({
             interval: 180,
             tolerance: 20,
             lazy: false,
+            hidden: true,
         },
         {
             name: "YouTube",
@@ -805,13 +806,13 @@ function buildProxyGroups({
             name: PROXY_GROUPS.DIRECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png",
             type: "select",
-            proxies: ["DIRECT", PROXY_GROUPS.SELECT],
+            proxies: ["DIRECT"],
         },
         {
             name: "广告拦截",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png",
             type: "select",
-            proxies: ["REJECT", "REJECT-DROP", PROXY_GROUPS.DIRECT],
+            proxies: ["REJECT", "REJECT-DROP", PROXY_GROUPS],
         },
         lowCostNodes.length > 0 || regexFilter
             ? {
@@ -881,7 +882,7 @@ function main(config) {
     const globalProxies = proxyGroups.map((item) => item.name);
     proxyGroups.push({
         name: "GLOBAL",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
         "include-all": true,
         type: "select",
         proxies: globalProxies,
