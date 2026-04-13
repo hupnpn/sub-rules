@@ -670,6 +670,22 @@ function buildProxyGroups({
                     ]
         },
         {
+            name: "AI服务",
+            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
+            type: "select",
+            proxies:[
+                    "香港节点", 
+                    "台湾节点", 
+                    "日本节点", 
+                    "韩国节点", 
+                    "新加坡节点", 
+                    "美国节点", 
+                    "手动选择", 
+                    "故障转移",
+                    "DIRECT"
+                    ]
+        },
+        {
             name: "Telegram",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             type: "select",
@@ -724,22 +740,6 @@ function buildProxyGroups({
         {
             name: "Spotify",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png",
-            type: "select",
-            proxies:[
-                    "香港节点", 
-                    "台湾节点", 
-                    "日本节点", 
-                    "韩国节点", 
-                    "新加坡节点", 
-                    "美国节点", 
-                    "手动选择", 
-                    "故障转移",
-                    "DIRECT"
-                    ]
-        },
-        {
-            name: "AI服务",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             type: "select",
             proxies:[
                     "香港节点", 
