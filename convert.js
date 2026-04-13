@@ -619,9 +619,17 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
             type: "select",
-            proxies: hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
-                    ? [PROXY_GROUPS.DIRECT, "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点"]
-                    : defaultProxiesDirect,
+            proxies:[
+                    "香港节点", 
+                    "台湾节点", 
+                    "日本节点", 
+                    "韩国节点", 
+                    "新加坡节点", 
+                    "美国节点", 
+                    "手动选择", 
+                    "故障转移",
+                    "DIRECT"
+                    ]
         },
         {
             name: PROXY_GROUPS.MANUAL,
