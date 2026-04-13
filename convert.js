@@ -577,7 +577,6 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png",
             type: "select",
             proxies:[
-                    "全球加速", 
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -644,7 +643,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -661,7 +660,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -678,7 +677,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -695,7 +694,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -712,7 +711,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "DIRECT"
@@ -723,7 +722,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "DIRECT"
@@ -734,7 +733,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -751,7 +750,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -768,7 +767,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -785,7 +784,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
@@ -802,7 +801,7 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
             type: "select",
             proxies:[
-                    "全球加速",
+                    "SELECT",
                     "香港节点", 
                     "台湾节点", 
                     "日本节点", 
