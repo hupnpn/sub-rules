@@ -718,7 +718,7 @@ function buildProxyGroups({
             type: "select",
             proxies:
                 hasTW && hasHK
-                    ? [PROXY_GROUPS.DIRECT, "台湾节点", "香港节点"]
+                    ? ["台湾节点", "香港节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
         {
