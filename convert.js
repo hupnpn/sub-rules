@@ -101,7 +101,7 @@ function stripNodeSuffix(groupNames) {
 }
 
 const PROXY_GROUPS = {
-    SELECT: "全球加速",
+    SELECT: "节点选择",
     MANUAL: "手动选择",
     FALLBACK: "故障转移",
     DIRECT: "直连",
@@ -401,6 +401,11 @@ const countriesMeta = {
         weight: 30,
         pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
+    },
+    美国: {
+        weight: 50,
+        pattern: "美国|美|US|United States|🇺🇸",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png",
     },
 };
 
