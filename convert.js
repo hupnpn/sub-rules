@@ -381,20 +381,10 @@ const countriesMeta = {
         weight: 10,
         pattern: "香港|港|HK|hk|Hong Kong|HongKong|hongkong|🇭🇰",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png",
-    },
-    澳门: {
-        pattern: "澳门|MO|Macau|🇲🇴",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Macao.png",
-    },
     台湾: {
         weight: 20,
         pattern: "台|新北|彰化|TW|Taiwan|🇹🇼",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png",
-    },
-    新加坡: {
-        weight: 30,
-        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
     },
     日本: {
         weight: 40,
@@ -405,49 +395,15 @@ const countriesMeta = {
         pattern: "KR|Korea|KOR|首尔|韩|韓|🇰🇷",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png",
     },
+    新加坡: {
+        weight: 30,
+        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
+    },
     美国: {
         weight: 50,
         pattern: "美国|美|US|United States|🇺🇸",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png",
-    },
-    加拿大: {
-        pattern: "加拿大|Canada|CA|🇨🇦",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Canada.png",
-    },
-    英国: {
-        weight: 60,
-        pattern: "英国|United Kingdom|UK|伦敦|London|🇬🇧",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_Kingdom.png",
-    },
-    澳大利亚: {
-        pattern: "澳洲|澳大利亚|AU|Australia|🇦🇺",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Australia.png",
-    },
-    德国: {
-        weight: 70,
-        pattern: "德国|德|DE|Germany|🇩🇪",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png",
-    },
-    法国: {
-        weight: 80,
-        pattern: "法国|法|FR|France|🇫🇷",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/France.png",
-    },
-    俄罗斯: {
-        pattern: "俄罗斯|俄|RU|Russia|🇷🇺",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Russia.png",
-    },
-    泰国: {
-        pattern: "泰国|泰|TH|Thailand|🇹🇭",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Thailand.png",
-    },
-    印度: {
-        pattern: "印度|IN|India|🇮🇳",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/India.png",
-    },
-    马来西亚: {
-        pattern: "马来西亚|马来|MY|Malaysia|🇲🇾",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Malaysia.png",
     },
 };
 
@@ -618,7 +574,10 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
             type: "select",
-            proxies: defaultSelector,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: PROXY_GROUPS.MANUAL,
@@ -673,33 +632,45 @@ function buildProxyGroups({
             name: "YouTube",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "Netflix",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "Telegram",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "AI服务",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "哔哩哔哩",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
             type: "select",
             proxies:
-                hasTW && hasHK
-                    ? ["台湾节点", "香港节点", PROXY_GROUPS.DIRECT]
+                hasHK && hasTW
+                    ? ["香港节点", "台湾节点", PROXY_GROUPS.DIRECT]
                     : defaultProxiesDirect,
         },
         {
@@ -714,31 +685,46 @@ function buildProxyGroups({
             name: "TikTok",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "Spotify",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies:
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "Apple",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "Google",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: "微软服务",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
             type: "select",
-            proxies: defaultProxies,
+            proxies: 
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? ["香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点", PROXY_GROUPS.DIRECT]
+                    : defaultProxiesDirect,
         },
         {
             name: PROXY_GROUPS.DIRECT,
