@@ -573,7 +573,7 @@ function buildProxyGroups({
 
     return [
         {
-            name: "全球加速",
+            name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png",
             type: "select",
             proxies:[
