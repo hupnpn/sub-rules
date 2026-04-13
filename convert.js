@@ -261,13 +261,13 @@ const ruleProviders = {
 const baseRules = [
     `RULE-SET,ADBlock,广告拦截`,
     `RULE-SET,AdditionalFilter,广告拦截`,
-    `RULE-SET,SogouInput,搜狗输入法`,
-    `DOMAIN-SUFFIX,truthsocial.com,真相社交`,
-    `RULE-SET,StaticResources,静态资源`,
-    `RULE-SET,CDNResources,静态资源`,
-    `RULE-SET,AdditionalCDNResources,静态资源`,
-    `RULE-SET,Crypto,加密货币`,
-    `RULE-SET,EHentai,E-Hentai`,
+    `RULE-SET,SogouInput,${PROXY_GROUPS.DIRECT}`,
+    `DOMAIN-SUFFIX,truthsocial.com,${PROXY_GROUPS.SELECT}`,
+    `RULE-SET,StaticResources,${PROXY_GROUPS.SELECT}`,
+    `RULE-SET,CDNResources,${PROXY_GROUPS.SELECT}`,
+    `RULE-SET,AdditionalCDNResources,${PROXY_GROUPS.SELECT}`,
+    `RULE-SET,Crypto,${PROXY_GROUPS.SELECT}`,
+    `RULE-SET,EHentai,${PROXY_GROUPS.SELECT}`,
     `RULE-SET,TikTok,TikTok`,
     "GEOSITE,YOUTUBE,YouTube",
     "GEOSITE,TELEGRAM,Telegram",
@@ -283,7 +283,7 @@ const baseRules = [
     "GEOSITE,SPOTIFY,Spotify",
     "GEOSITE,BAHAMUT,巴哈姆特",
     "GEOSITE,BILIBILI,哔哩哔哩",
-    "GEOSITE,PIKPAK,PikPak网盘",
+    `GEOSITE,PIKPAK,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,GFW,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOSITE,PRIVATE,${PROXY_GROUPS.DIRECT}`,
@@ -291,7 +291,7 @@ const baseRules = [
     "GEOIP,TELEGRAM,Telegram,no-resolve",
     `GEOIP,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOIP,PRIVATE,${PROXY_GROUPS.DIRECT}`,
-    "DST-PORT,22,SSH(22端口)",
+    `DST-PORT,22,${PROXY_GROUPS.SELECT}`,
     `MATCH,${PROXY_GROUPS.SELECT}`,
 ];
 
@@ -392,11 +392,6 @@ const countriesMeta = {
         pattern: "台|新北|彰化|TW|Taiwan|🇹🇼",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png",
     },
-    新加坡: {
-        weight: 30,
-        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
-        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
-    },
     日本: {
         weight: 40,
         pattern: "日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵",
@@ -405,6 +400,11 @@ const countriesMeta = {
     韩国: {
         pattern: "KR|Korea|KOR|首尔|韩|韓|🇰🇷",
         icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png",
+    },
+    新加坡: {
+        weight: 30,
+        pattern: "新加坡|坡|狮城|SG|Singapore|🇸🇬",
+        icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png",
     },
     美国: {
         weight: 50,
@@ -619,7 +619,10 @@ function buildProxyGroups({
             name: PROXY_GROUPS.SELECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png",
             type: "select",
-            proxies: defaultSelector,
+            proxies:
+                hasHK && hasTW && hasJP && hasKR && hasGS && hasUS
+                    ? [PROXY_GROUPS.DIRECT, "香港节点", "台湾节点", "日本节点", "韩国节点", "新加坡节点", "美国节点"]
+                    : defaultProxiesDirect,
         },
         {
             name: PROXY_GROUPS.MANUAL,
@@ -717,8 +720,8 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png",
             type: "select",
             proxies:
-                hasTW && hasHK
-                    ? [PROXY_GROUPS.DIRECT, "台湾节点", "香港节点"]
+                hasHK && hasTW 
+                    ? [PROXY_GROUPS.DIRECT, "香港节点", "台湾节点"]
                     : defaultProxiesDirect,
         },
         {
