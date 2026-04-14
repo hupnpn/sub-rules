@@ -284,7 +284,7 @@ const baseRules = [
     "GEOSITE,BAHAMUT,巴哈姆特",
     "GEOSITE,BILIBILI,哔哩哔哩",
     "GEOSITE,PIKPAK,全球加速",
-    `GEOSITE,GFW,${PROXY_GROUPS.全球加速}`,
+    `GEOSITE,GFW,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOSITE,PRIVATE,${PROXY_GROUPS.DIRECT}`,
     "GEOIP,NETFLIX,Netflix,no-resolve",
@@ -292,7 +292,7 @@ const baseRules = [
     `GEOIP,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOIP,PRIVATE,${PROXY_GROUPS.DIRECT}`,
     "DST-PORT,22,全球加速",
-    `MATCH,${PROXY_GROUPS.全球加速}`,
+    `MATCH,${PROXY_GROUPS.SELECT}`,
 ];
 
 function buildRules({ quicEnabled }) {
