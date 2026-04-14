@@ -820,7 +820,7 @@ function buildProxyGroups({
             name: "广告拦截",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png",
             type: "select",
-            proxies: ["REJECT", "REJECT-DROP", PROXY_GROUPS.DIRECT],
+            proxies: ["REJECT", "REJECT-DROP"],
         },
         lowCostNodes.length > 0 || regexFilter
             ? {
