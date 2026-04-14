@@ -507,7 +507,7 @@ function buildCountryProxyGroups({ countries, landing, loadBalance, regexFilter,
             groupConfig = {
                 name: `${country}${NODE_SUFFIX}`,
                 icon: meta.icon,
-                type: groupType,
+                type: select,
                 proxies: nodeNames,
             };
         } else {
@@ -524,7 +524,7 @@ function buildCountryProxyGroups({ countries, landing, loadBalance, regexFilter,
                 "exclude-filter": landing
                     ? `${landingExcludeFilter}|${baseExcludeFilter}`
                     : baseExcludeFilter,
-                type: groupType,
+                type: select,
             };
         }
 
