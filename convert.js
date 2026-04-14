@@ -507,7 +507,7 @@ function buildCountryProxyGroups({ countries, landing, loadBalance, regexFilter,
             groupConfig = {
                 name: `${country}${NODE_SUFFIX}`,
                 icon: meta.icon,
-                type: select,
+                type: groupType,
                 proxies: nodeNames,
             };
         } else {
