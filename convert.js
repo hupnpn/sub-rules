@@ -814,7 +814,7 @@ function buildProxyGroups({
             name: PROXY_GROUPS.DIRECT,
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png",
             type: "select",
-            proxies: ["DIRECT", PROXY_GROUPS.SELECT],
+            proxies: ["DIRECT"],
         },
         {
             name: "广告拦截",
