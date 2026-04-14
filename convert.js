@@ -760,6 +760,23 @@ function buildProxyGroups({
             ],
         },
         {
+            name: "微软服务",
+            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
+            type: "select",
+            proxies: [
+                "香港节点",
+                "台湾节点",
+                "日本节点",
+                "狮城节点",
+                "韩国节点",
+                "美国节点",
+                "全球加速",
+                "手动选择",
+                "故障转移",
+                "DIRECT",
+            ],
+        },
+        {
             name: "Apple",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png",
             type: "select",
@@ -779,23 +796,6 @@ function buildProxyGroups({
         {
             name: "Google",
             icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
-            type: "select",
-            proxies: [
-                "香港节点",
-                "台湾节点",
-                "日本节点",
-                "狮城节点",
-                "韩国节点",
-                "美国节点",
-                "全球加速",
-                "手动选择",
-                "故障转移",
-                "DIRECT",
-            ],
-        },
-        {
-            name: "微软服务",
-            icon: "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png",
             type: "select",
             proxies: [
                 "香港节点",
