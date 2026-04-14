@@ -815,14 +815,14 @@ function buildProxyGroups({
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png",
             type: "select",
             proxies: ["DIRECT"],
-            hidden: true
+            hidden: true,
         },
         {
             name: "广告拦截",
             icon: "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png",
             type: "select",
             proxies: ["REJECT", "REJECT-DROP"],
-            hidden: true
+            hidden: true,
         },
         lowCostNodes.length > 0 || regexFilter
             ? {
