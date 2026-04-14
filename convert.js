@@ -101,7 +101,7 @@ function stripNodeSuffix(groupNames) {
 }
 
 const PROXY_GROUPS = {
-    SELECT: "选择代理",
+    SELECT: "全球加速",
     MANUAL: "手动选择",
     FALLBACK: "故障转移",
     DIRECT: "直连",
@@ -262,7 +262,7 @@ const baseRules = [
     `RULE-SET,ADBlock,广告拦截`,
     `RULE-SET,AdditionalFilter,广告拦截`,
     `RULE-SET,SogouInput,DIRECT`,
-    `DOMAIN-SUFFIX,truthsocial.com,选择代理`,
+    `DOMAIN-SUFFIX,truthsocial.com,全球加速`,
     `RULE-SET,StaticResources,选择代理`,
     `RULE-SET,CDNResources,选择代理`,
     `RULE-SET,AdditionalCDNResources,选择代理`,
@@ -283,7 +283,7 @@ const baseRules = [
     "GEOSITE,SPOTIFY,Spotify",
     "GEOSITE,BAHAMUT,巴哈姆特",
     "GEOSITE,BILIBILI,哔哩哔哩",
-    "GEOSITE,PIKPAK,选择代理",
+    "GEOSITE,PIKPAK,全球加速",
     `GEOSITE,GFW,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOSITE,PRIVATE,${PROXY_GROUPS.DIRECT}`,
@@ -291,7 +291,7 @@ const baseRules = [
     "GEOIP,TELEGRAM,Telegram,no-resolve",
     `GEOIP,CN,${PROXY_GROUPS.DIRECT}`,
     `GEOIP,PRIVATE,${PROXY_GROUPS.DIRECT}`,
-    "DST-PORT,22,选择代理",
+    "DST-PORT,22,全球加速",
     `MATCH,${PROXY_GROUPS.SELECT}`,
 ];
 
