@@ -841,7 +841,7 @@ function buildProxyGroups({
 
 // eslint-disable-next-line no-unused-vars -- 通过 vm.runInContext 在 yaml_generator 中被调用
 function main(config) {
-    const excludePattern = /官网|雨燕云|ios设备请升级软件/i; 
+    const excludePattern = /官网|雨燕云|ios/i; 
     if (config.proxies) {
         config.proxies = config.proxies.filter(proxy => !excludePattern.test(proxy.name));
     }
